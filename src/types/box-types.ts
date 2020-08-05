@@ -1,5 +1,5 @@
 import React from 'react'
-import { EnhancerProps } from './enhancers'
+import type { EnhancerProps } from './enhancers'
 
 export { EnhancerProps }
 

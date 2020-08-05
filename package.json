@@ -14,8 +14,7 @@
   ],
   "repository": "segmentio/ui-box",
   "license": "MIT",
-  "main": "dist/src/index.js",
-  "typings": "dist/src/index.d.ts",
+  "main": "src/index.tsx",
   "files": [
     "dist/src"
   ],

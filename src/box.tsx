@@ -1,7 +1,5 @@
 import React, { forwardRef } from 'react'
-import PropTypes from 'prop-types'
 import { BoxProps } from './types/box-types'
-import { propTypes } from './enhancers'
 import enhanceProps from './enhance-props'
 import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
@@ -32,13 +30,6 @@ const Box = forwardRef(<E extends React.ElementType>({ is, children, allowUnsafe
 
 // @ts-ignore
 Box.displayName = 'Box'
-
-// @ts-ignore
-Box.propTypes = {
-  ...propTypes,
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.elementType]),
-  allowUnsafeHref: PropTypes.bool
-}
 
 // @ts-ignore
 Box.defaultProps = {

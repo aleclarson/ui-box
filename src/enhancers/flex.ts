@@ -1,26 +1,5 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  alignContent: PropTypes.string,
-  alignItems: PropTypes.string,
-  alignSelf: PropTypes.string,
-  flex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  flexBasis: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  flexDirection: PropTypes.string,
-  flexFlow: PropTypes.string,
-  flexGrow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  flexShrink: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  flexWrap: PropTypes.string,
-  justifyContent: PropTypes.string,
-  justifyItems: PropTypes.string,
-  justifySelf: PropTypes.string,
-  order: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  placeContent: PropTypes.string,
-  placeItems: PropTypes.string,
-  placeSelf: PropTypes.string
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 export const propValidators: PropValidators = {}

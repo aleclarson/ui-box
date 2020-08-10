@@ -1,24 +1,6 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
 import {spacesOutsideParentheses} from '../utils/regex'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  margin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  marginBottom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  marginLeft: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  marginRight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  marginTop: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  marginX: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  marginY: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  paddingBottom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  paddingLeft: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  paddingRight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  paddingTop: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  paddingX: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  paddingY: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {
   margin: ['marginBottom', 'marginLeft', 'marginRight', 'marginTop'],

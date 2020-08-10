@@ -1,14 +1,5 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  bottom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  left: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  position: PropTypes.string,
-  right: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  top: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 export const propValidators: PropValidators = {}

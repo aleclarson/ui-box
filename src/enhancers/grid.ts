@@ -1,30 +1,5 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  columnGap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  grid: PropTypes.string,
-  gridArea: PropTypes.string,
-  gridAutoColumns: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridAutoFlow: PropTypes.string,
-  gridAutoRows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridColumn: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridColumnEnd: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridColumnGap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridColumnStart: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridGap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridRow: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridRowEnd: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridRowGap: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridRowStart: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  gridTemplate: PropTypes.string,
-  gridTemplateAreas: PropTypes.string,
-  gridTemplateColumns: PropTypes.string,
-  gridTemplateRows: PropTypes.string,
-  rowGap: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 

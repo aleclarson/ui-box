@@ -1,13 +1,5 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  cursor: PropTypes.string,
-  pointerEvents: PropTypes.string,
-  userSelect: PropTypes.string,
-  visibility: PropTypes.string
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 

@@ -1,30 +1,6 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
 import {spacesOutsideParentheses} from '../utils/regex'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  border: PropTypes.string,
-  borderBottom: PropTypes.string,
-  borderBottomColor: PropTypes.string,
-  borderBottomStyle: PropTypes.string,
-  borderBottomWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  borderColor: PropTypes.string,
-  borderLeft: PropTypes.string,
-  borderLeftColor: PropTypes.string,
-  borderLeftStyle: PropTypes.string,
-  borderLeftWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  borderRight: PropTypes.string,
-  borderRightColor: PropTypes.string,
-  borderRightStyle: PropTypes.string,
-  borderRightWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  borderStyle: PropTypes.string,
-  borderTop: PropTypes.string,
-  borderTopColor: PropTypes.string,
-  borderTopStyle: PropTypes.string,
-  borderTopWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  borderWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  } from '../types/enhancers'
 
 export const propAliases = {
   border: ['borderBottom', 'borderLeft', 'borderRight', 'borderTop'],

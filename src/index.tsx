@@ -24,7 +24,6 @@ export {
   spacing,
   text,
   transform,
-  propTypes,
   propNames,
   propAliases,
   propEnhancers

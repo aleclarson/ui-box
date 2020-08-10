@@ -1,16 +1,6 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
 import { getClassNamePrefix } from '../get-class-name'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  boxSizing: PropTypes.string,
-  clear: PropTypes.string,
-  clearfix: PropTypes.bool,
-  display: PropTypes.string,
-  float: PropTypes.string,
-  zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 export const propValidators: PropValidators = {}

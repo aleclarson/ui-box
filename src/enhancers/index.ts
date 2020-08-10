@@ -17,7 +17,7 @@ import * as spacing from './spacing'
 import * as text from './text'
 import * as transform from './transform'
 import * as transition from './transition'
-import { PropValidators, PropEnhancers, PropAliases, PropTypesMapping } from '../types/enhancers'
+import { PropValidators, PropEnhancers, PropAliases,  } from '../types/enhancers'
 
 export {
   background,
@@ -40,30 +40,6 @@ export {
   transform,
   transition
 }
-
-export const propTypes: PropTypesMapping = {
-  ...background.propTypes,
-  ...borderRadius.propTypes,
-  ...borders.propTypes,
-  ...boxShadow.propTypes,
-  ...dimensions.propTypes,
-  ...flex.propTypes,
-  ...grid.propTypes,
-  ...interaction.propTypes,
-  ...layout.propTypes,
-  ...list.propTypes,
-  ...opacity.propTypes,
-  ...outline.propTypes,
-  ...overflow.propTypes,
-  ...position.propTypes,
-  ...resize.propTypes,
-  ...spacing.propTypes,
-  ...text.propTypes,
-  ...transform.propTypes,
-  ...transition.propTypes
-}
-
-export const propNames = Object.keys(propTypes)
 
 export const propAliases: PropAliases = {
   ...background.propAliases,
@@ -130,3 +106,5 @@ export const propEnhancers: PropEnhancers = {
   ...transform.propEnhancers,
   ...transition.propEnhancers
 }
+
+export const propNames = Object.keys(propAliases).concat(Object.keys(propEnhancers))

@@ -1,27 +1,5 @@
-import PropTypes from 'prop-types'
 import getCss from '../get-css'
-import { PropEnhancerValueType, PropValidators, PropEnhancers, PropTypesMapping, PropAliases } from '../types/enhancers'
-
-export const propTypes: PropTypesMapping = {
-  color: PropTypes.string,
-  font: PropTypes.string,
-  fontFamily: PropTypes.string,
-  fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  fontStyle: PropTypes.string,
-  fontVariant: PropTypes.string,
-  fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  letterSpacing: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  lineHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  textAlign: PropTypes.string,
-  textDecoration: PropTypes.string,
-  textOverflow: PropTypes.string,
-  textShadow: PropTypes.string,
-  textTransform: PropTypes.string,
-  verticalAlign: PropTypes.string,
-  whiteSpace: PropTypes.string,
-  wordBreak: PropTypes.string,
-  wordWrap: PropTypes.string
-}
+import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 export const propValidators: PropValidators = {}

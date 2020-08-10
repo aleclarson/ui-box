@@ -1,4 +1,5 @@
 dependencies:
+  '@alloc/is-dev': 1.2.2
   '@emotion/hash': 0.7.4
   inline-style-prefixer: 5.1.2
 devDependencies:
@@ -13,6 +14,10 @@ devDependencies:
   typescript: 3.9.7
 lockfileVersion: 5.1
 packages:
+  /@alloc/is-dev/1.2.2:
+    dev: false
+    resolution:
+      integrity: sha512-EkpBVIODXFYUWxou3xJmRD+bmwYTOYMShG0tswjZ6uv0k7INOzXzp/uyjOdSZ4K9ygp8mNCLOxjCkiRfd7TDYA==
   /@babel/code-frame/7.10.4:
     dependencies:
       '@babel/highlight': 7.10.4
@@ -250,6 +255,7 @@ packages:
     resolution:
       integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 specifiers:
+  '@alloc/is-dev': ^1.2.2
   '@emotion/hash': ^0.7.1
   '@types/inline-style-prefixer': ^5.0.0
   '@types/react': ^16.8.16

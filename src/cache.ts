@@ -1,3 +1,4 @@
+import { isDev } from '@alloc/is-dev'
 import { BoxPropValue } from './types/enhancers'
 
 type CacheValue = BoxPropValue
@@ -12,7 +13,7 @@ export function set(
   value: CacheValue | object,
   className: string
 ) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (isDev) {
     const valueType = typeof value
     if (
       valueType !== 'boolean' &&

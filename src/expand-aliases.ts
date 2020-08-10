@@ -1,5 +1,6 @@
 import { propAliases, propValidators } from './enhancers/index'
 import { BoxPropValue } from './types/enhancers'
+import { isDev } from '@alloc/is-dev'
 
 /**
  * Expands aliases like `margin` to `marginTop`, `marginBottom`, `marginLeft` and `marginRight`.
@@ -17,7 +18,7 @@ export default function expandAliases(props: { [key: string]: BoxPropValue }) {
     const aliases: string[] = propAliases[propName] || [propName]
 
     // Check that the alias has a valid value in development
-    if (process.env.NODE_ENV !== 'production') {
+    if (isDev) {
       const validator = propValidators[propName]
       if (validator) {
         const result = validator(propValue)

@@ -1,4 +1,7 @@
 // This file is based off glamor's StyleSheet
+
+import { isDev } from '@alloc/is-dev'
+
 // https://github.com/threepointone/glamor/blob/v2.20.40/src/sheet.js
 const isBrowser = typeof window !== 'undefined'
 
@@ -56,14 +59,10 @@ export default class CustomStyleSheet {
   private ctr: number = 0
   private injected: boolean = false
 
-  constructor(options: Options = {}) {
+  constructor({ speedy = !isDev, maxLength = 65000 }: Options = {}) {
     // The big drawback here is that the css won't be editable in devtools
-    this.isSpeedy =
-      options.speedy === undefined
-        ? process.env.NODE_ENV === 'production'
-        : options.speedy
-
-    this.maxLength = options.maxLength || 65000
+    this.isSpeedy = speedy
+    this.maxLength = maxLength
   }
 
   getSheet() {

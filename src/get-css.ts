@@ -2,6 +2,7 @@ import prefixer, { Rule } from './prefixer'
 import valueToString from './value-to-string'
 import getClassName, { PropertyInfo } from './get-class-name'
 import { EnhancedProp } from './types/enhancers'
+import { isDev } from '@alloc/is-dev'
 
 /**
  * Generates the class name and styles.
@@ -15,7 +16,7 @@ export default function getCss(
   // Protect against unexpected values
   const valueType = typeof value
   if (valueType !== 'string' && valueType !== 'number') {
-    if (process.env.NODE_ENV !== 'production') {
+    if (isDev) {
       const name = propertyInfo.jsName
       const encodedValue = JSON.stringify(value)
       console.error(
@@ -37,7 +38,7 @@ export default function getCss(
   }
 
   let styles: string
-  if (process.env.NODE_ENV === 'production') {
+  if (!isDev) {
     const rulesString = rules
       .map(rule => `${rule.property}:${rule.value}`)
       .join(';')

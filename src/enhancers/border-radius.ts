@@ -1,3 +1,4 @@
+import { isDev } from '@alloc/is-dev'
 import getCss from '../get-css'
 import { spacesOutsideParentheses } from '../utils/regex'
 import {
@@ -17,7 +18,7 @@ export const propAliases = {
 
 export const propValidators: PropValidators = {}
 
-if (process.env.NODE_ENV !== 'production') {
+if (isDev) {
   propValidators.borderRadius = value => {
     if (spacesOutsideParentheses.test(value)) {
       return `multiple values (“${value}”) aren՚t supported with “borderRadius”. Use “borderBottomLeftRadius”, “borderBottomRightRadius” “borderTopLeftRadius” and “borderTopRightRadius” instead.`

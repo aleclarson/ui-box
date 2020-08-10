@@ -6,7 +6,14 @@ export { default as splitProps } from './utils/split-props'
 export { default as splitBoxProps } from './utils/split-box-props'
 export { setClassNamePrefix } from './get-class-name'
 export { configureSafeHref } from './utils/safeHref'
-export type { BoxProps, BoxOwnProps, EnhancerProps, PropsOf, PolymorphicBoxProps, BoxComponent } from './types/box-types'
+export type {
+  BoxProps,
+  BoxOwnProps,
+  EnhancerProps,
+  PropsOf,
+  PolymorphicBoxProps,
+  BoxComponent,
+} from './types/box-types'
 
 export {
   background,
@@ -26,7 +33,7 @@ export {
   transform,
   propNames,
   propAliases,
-  propEnhancers
+  propEnhancers,
 } from './enhancers/index'
 
 export const hydrate = cache.hydrate
@@ -34,7 +41,7 @@ export const hydrate = cache.hydrate
 export function extractStyles() {
   const output = {
     cache: cache.entries(),
-    styles: styles.getAll()
+    styles: styles.getAll(),
   }
   clearStyles()
   return output

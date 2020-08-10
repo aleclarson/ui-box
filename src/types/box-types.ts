@@ -18,7 +18,10 @@ export type PropsOf<
  * @template P Additional props
  * @template T React component or string element
  */
-export type BoxOwnProps<E extends React.ElementType = React.ElementType, P = {}> = Without<EnhancerProps, keyof P> & {
+export type BoxOwnProps<
+  E extends React.ElementType = React.ElementType,
+  P = {}
+> = Without<EnhancerProps, keyof P> & {
   /**
    * Replaces the underlying element
    */
@@ -30,7 +33,8 @@ export type BoxOwnProps<E extends React.ElementType = React.ElementType, P = {}>
   allowUnsafeHref?: boolean
 }
 
-export type BoxProps<E extends React.ElementType> = BoxOwnProps<E> & Without<PropsOf<E>, keyof BoxOwnProps>
+export type BoxProps<E extends React.ElementType> = BoxOwnProps<E> &
+  Without<PropsOf<E>, keyof BoxOwnProps>
 
 /**
  * Convenience type for defining your own component props that extend Box and pass-through props
@@ -45,6 +49,9 @@ export type PolymorphicBoxProps<
 /**
  * Convenience type for defining your own components that extend Box and pass-through props
  */
-export type BoxComponent<P = {}, D extends React.ElementType = React.ElementType> = <
-  E extends React.ElementType = D
->(props: PolymorphicBoxProps<E, P>) => JSX.Element
+export type BoxComponent<
+  P = {},
+  D extends React.ElementType = React.ElementType
+> = <E extends React.ElementType = D>(
+  props: PolymorphicBoxProps<E, P>
+) => JSX.Element

@@ -1,6 +1,10 @@
 import getCss from '../get-css'
-import { PropEnhancerValueType, PropValidators, PropEnhancers,  PropAliases } from '../types/enhancers'
-
+import {
+  PropEnhancerValueType,
+  PropValidators,
+  PropEnhancers,
+  PropAliases,
+} from '../types/enhancers'
 
 export const propAliases: PropAliases = {}
 
@@ -10,9 +14,9 @@ const opacity = {
   className: 'opct',
   cssName: 'opacity',
   jsName: 'opacity',
-  defaultUnit: ''
+  defaultUnit: '',
 }
 
 export const propEnhancers: PropEnhancers = {
-  opacity: (value: PropEnhancerValueType) => getCss(opacity, value)
+  opacity: (value: PropEnhancerValueType) => getCss(opacity, value),
 }

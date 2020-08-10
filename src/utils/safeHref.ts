@@ -11,7 +11,8 @@ export interface SafeHrefConfigObj {
 const PROTOCOL_REGEX = /^[a-z]+:/
 const ORIGIN_REGEX = /^(?:[a-z]+:?:)?(?:\/\/)?([^\/\?]+)/
 let useSafeHref = true
-let globalOrigin = typeof window !== 'undefined' ? window.location.origin : false
+let globalOrigin =
+  typeof window !== 'undefined' ? window.location.origin : false
 
 export function configureSafeHref(configObject: SafeHrefConfigObj) {
   if (typeof configObject.enabled === 'boolean') {
@@ -59,7 +60,7 @@ export function getURLInfo(url: string): URLInfo {
     )
     return {
       url: undefined,
-      sameOrigin
+      sameOrigin,
     }
   }
 
@@ -68,7 +69,7 @@ export function getURLInfo(url: string): URLInfo {
    */
   return {
     url,
-    sameOrigin
+    sameOrigin,
   }
 }
 
@@ -96,6 +97,6 @@ export function extractAnchorProps(href: string, rel: string) {
 
   return {
     safeHref,
-    safeRel
+    safeRel,
   }
 }

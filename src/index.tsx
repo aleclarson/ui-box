@@ -1,7 +1,7 @@
 import * as cache from './cache'
 import * as styles from './styles'
 
-export { default } from './box'
+export { default as Box } from './box'
 export { default as splitProps } from './utils/split-props'
 export { default as splitBoxProps } from './utils/split-box-props'
 export { setClassNamePrefix } from './get-class-name'

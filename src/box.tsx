@@ -47,7 +47,6 @@ Box.displayName = 'Box'
 // @ts-ignore
 Box.defaultProps = {
   is: 'div',
-  boxSizing: 'border-box',
 }
 
 export default Box

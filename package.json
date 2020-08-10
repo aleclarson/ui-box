@@ -14,9 +14,12 @@
   ],
   "repository": "segmentio/ui-box",
   "license": "MIT",
-  "main": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
   "files": [
-    "dist/src"
+    "dist",
+    "src"
   ],
   "sideEffects": false,
   "engines": {
@@ -26,7 +29,7 @@
     "test": "xo && nyc ava",
     "prepublishOnly": "rm -rf dist && yarn run build",
     "dev": "start-storybook -p 9009",
-    "build": "tsc",
+    "build": "rollup -c",
     "build-storybook": "build-storybook -s .storybook/static -o .out",
     "release": "np",
     "benchmark": "echo ui-box && react-benchmark dist/tools/benchmarks/box.js",
@@ -44,6 +47,10 @@
     "@types/inline-style-prefixer": "^5.0.0",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
+    "esbuild": "^0.6.19",
+    "rollup": "^2.23.1",
+    "rollup-plugin-dts": "^1.4.10",
+    "rollup-plugin-esbuild": "^2.4.2",
     "typescript": "^3.4.5"
   },
   "xo": {

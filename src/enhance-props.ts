@@ -1,9 +1,9 @@
-import { propEnhancers } from './enhancers'
+import { propEnhancers, propNames } from './enhancers'
 import expandAliases from './expand-aliases'
 import * as cache from './cache'
 import * as styles from './styles'
 import { Without } from './types/box-types'
-import { EnhancerProps } from './types/enhancers'
+import { EnhancerProps, EnhancedProp } from './types/enhancers'
 
 type PreservedProps = Without<React.ComponentProps<any>, keyof EnhancerProps>
 
@@ -19,7 +19,9 @@ export default function enhanceProps(
   rawProps: EnhancerProps & React.ComponentPropsWithoutRef<any>
 ): EnhancedPropsResult {
   const propsMap = expandAliases(rawProps)
-  const preservedProps: PreservedProps = {}
+
+  const style = { ...rawProps.style }
+  const preservedProps: PreservedProps = { style }
   let className = rawProps.className || ''
 
   for (const [propName, propValue] of propsMap) {
@@ -29,15 +31,22 @@ export default function enhanceProps(
       continue
     }
 
-    const enhancer = propEnhancers[propName]
+    const enhancer = propEnhancers[propName] as
+      | ((value: any) => EnhancedProp | null)
+      | undefined
+
     // Skip false boolean enhancers. e.g: `clearfix={false}`
     // Also allows omitting props via overriding with `null` (i.e: neutralising props)
-    if (
-      enhancer &&
-      (propValue === null || propValue === undefined || propValue === false)
-    ) {
-      continue
-    } else if (!enhancer) {
+    if (enhancer) {
+      if (propValue == null || propValue === false) {
+        continue
+      }
+      if (typeof propValue == 'object') {
+        const ns = propNames.includes(propName) ? style : preservedProps
+        ns[propName] = propValue
+        continue
+      }
+    } else {
       // Pass through native props. e.g: disabled, value, type
       preservedProps[propName] = propValue
       continue

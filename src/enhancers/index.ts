@@ -17,6 +17,7 @@ import * as spacing from './spacing'
 import * as text from './text'
 import * as transform from './transform'
 import * as transition from './transition'
+import * as willChange from './will-change'
 import { PropValidators, PropEnhancers, PropAliases } from '../types/enhancers'
 
 export {
@@ -39,6 +40,7 @@ export {
   text,
   transform,
   transition,
+  willChange,
 }
 
 export const propAliases: PropAliases = {
@@ -61,6 +63,7 @@ export const propAliases: PropAliases = {
   ...text.propAliases,
   ...transform.propAliases,
   ...transition.propAliases,
+  ...willChange.propAliases,
 }
 
 export const propValidators: PropValidators = {
@@ -83,6 +86,7 @@ export const propValidators: PropValidators = {
   ...text.propValidators,
   ...transform.propValidators,
   ...transition.propValidators,
+  ...willChange.propValidators,
 }
 
 export const propEnhancers: PropEnhancers = {
@@ -105,6 +109,7 @@ export const propEnhancers: PropEnhancers = {
   ...text.propEnhancers,
   ...transform.propEnhancers,
   ...transition.propEnhancers,
+  ...willChange.propEnhancers,
 }
 
 export const propNames = Object.keys(propAliases).concat(

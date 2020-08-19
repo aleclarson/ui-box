@@ -135,6 +135,7 @@ type CssProps = Pick<
   | 'visibility'
   | 'whiteSpace'
   | 'width'
+  | 'willChange'
   | 'wordBreak'
   | 'wordWrap'
   | 'zIndex'

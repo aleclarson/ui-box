@@ -8,6 +8,7 @@ import * as grid from './grid'
 import * as interaction from './interaction'
 import * as layout from './layout'
 import * as list from './list'
+import * as mask from './mask'
 import * as opacity from './opacity'
 import * as outline from './outline'
 import * as overflow from './overflow'
@@ -31,6 +32,7 @@ export {
   interaction,
   layout,
   list,
+  mask,
   opacity,
   outline,
   overflow,
@@ -54,6 +56,7 @@ export const propAliases: PropAliases = {
   ...interaction.propAliases,
   ...layout.propAliases,
   ...list.propAliases,
+  ...mask.propAliases,
   ...opacity.propAliases,
   ...outline.propAliases,
   ...overflow.propAliases,
@@ -77,6 +80,7 @@ export const propValidators: PropValidators = {
   ...interaction.propValidators,
   ...layout.propValidators,
   ...list.propValidators,
+  ...mask.propValidators,
   ...opacity.propValidators,
   ...outline.propValidators,
   ...overflow.propValidators,
@@ -100,6 +104,7 @@ export const propEnhancers: PropEnhancers = {
   ...interaction.propEnhancers,
   ...layout.propEnhancers,
   ...list.propEnhancers,
+  ...mask.propEnhancers,
   ...opacity.propEnhancers,
   ...outline.propEnhancers,
   ...overflow.propEnhancers,

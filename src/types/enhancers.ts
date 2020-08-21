@@ -94,6 +94,8 @@ type CssProps = Pick<
   | 'marginLeft'
   | 'marginRight'
   | 'marginTop'
+  | 'mask'
+  | 'maskSize'
   | 'maxHeight'
   | 'maxWidth'
   | 'minHeight'

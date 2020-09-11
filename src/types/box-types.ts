@@ -39,7 +39,7 @@ type RefType<E extends React.ElementType = 'div'> = React.ComponentPropsWithRef<
   E
 >['ref']
 
-export type BoxProps<E extends React.ElementType> = BoxOwnProps<E> &
+export type BoxProps<E extends React.ElementType = 'div'> = BoxOwnProps<E> &
   Without<PropsOf<E>, keyof BoxOwnProps>
 
 /**

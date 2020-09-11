@@ -31,7 +31,13 @@ export type BoxOwnProps<
    * Allows the high level value of safeHref to be overwritten on an individual component basis
    */
   allowUnsafeHref?: boolean
+
+  ref?: RefType<E>
 }
+
+type RefType<E extends React.ElementType = 'div'> = React.ComponentPropsWithRef<
+  E
+>['ref']
 
 export type BoxProps<E extends React.ElementType> = BoxOwnProps<E> &
   Without<PropsOf<E>, keyof BoxOwnProps>

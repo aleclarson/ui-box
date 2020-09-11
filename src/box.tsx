@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { BoxProps } from './types/box-types'
+import { BoxComponent, BoxProps } from './types/box-types'
 import enhanceProps from './enhance-props'
 import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
@@ -39,7 +39,7 @@ const Box = forwardRef(
 
     return React.createElement(is || 'div', parsedProps, children)
   }
-) as <E extends React.ElementType = 'div'>(props: BoxProps<E>) => JSX.Element
+) as BoxComponent<{}, 'div'>
 
 // @ts-ignore
 Box.displayName = 'Box'

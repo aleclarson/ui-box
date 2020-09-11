@@ -39,7 +39,7 @@ const Box = forwardRef(
 
     return React.createElement(is || 'div', parsedProps, children)
   }
-) as BoxComponent<{}, 'div'>
+) as BoxComponent
 
 // @ts-ignore
 Box.displayName = 'Box'

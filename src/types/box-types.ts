@@ -55,9 +55,8 @@ export type PolymorphicBoxProps<
 /**
  * Convenience type for defining your own components that extend Box and pass-through props
  */
-export type BoxComponent<
-  P = {},
-  D extends React.ElementType = React.ElementType
-> = <E extends React.ElementType = D>(
-  props: PolymorphicBoxProps<E, P>
-) => JSX.Element
+export interface BoxComponent<P = {}, D extends React.ElementType = 'div'> {
+  <E extends React.ElementType = D>(
+    props: PolymorphicBoxProps<E, P>
+  ): JSX.Element
+}

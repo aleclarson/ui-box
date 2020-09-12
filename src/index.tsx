@@ -11,7 +11,6 @@ export type {
   BoxOwnProps,
   EnhancerProps,
   PropsOf,
-  PolymorphicBoxProps,
   BoxComponent,
 } from './types/box-types'
 

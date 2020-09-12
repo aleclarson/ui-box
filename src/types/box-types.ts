@@ -3,12 +3,6 @@ import type { EnhancerProps } from './enhancers'
 
 export { EnhancerProps }
 
-/**
- * @template T Object
- * @template K Union of keys (not necessarily present in T)
- */
-export type Without<T, K> = Pick<T, Exclude<keyof T, K>>
-
 export type PropsOf<
   E extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>
 > = JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>
@@ -18,45 +12,26 @@ export type PropsOf<
  * @template P Additional props
  * @template T React component or string element
  */
-export type BoxOwnProps<
-  E extends React.ElementType = React.ElementType,
-  P = {}
-> = Without<EnhancerProps, keyof P> & {
+export interface BoxOwnProps extends EnhancerProps {
   /**
    * Replaces the underlying element
    */
-  is?: E
+  is?: React.ElementType
 
   /**
    * Allows the high level value of safeHref to be overwritten on an individual component basis
    */
   allowUnsafeHref?: boolean
-
-  ref?: RefType<E>
 }
 
-type RefType<E extends React.ElementType = 'div'> = React.ComponentPropsWithRef<
-  E
->['ref']
-
-export type BoxProps<E extends React.ElementType = 'div'> = BoxOwnProps<E> &
-  Without<PropsOf<E>, keyof BoxOwnProps>
-
-/**
- * Convenience type for defining your own component props that extend Box and pass-through props
- */
-export type PolymorphicBoxProps<
-  E extends React.ElementType,
-  // optional additional props (which we get removed from BoxOwnProps and PropsOf)
-  // this is useful for defining some pass-through props on a wrapper for Box
-  P = {}
-> = BoxOwnProps<E, P> & Without<PropsOf<E>, keyof (BoxOwnProps & P)> & P
+export type BoxProps<E extends React.ElementType = 'div'> = BoxOwnProps &
+  Omit<PropsOf<E>, keyof BoxOwnProps>
 
 /**
  * Convenience type for defining your own components that extend Box and pass-through props
  */
 export interface BoxComponent<P = {}, D extends React.ElementType = 'div'> {
   <E extends React.ElementType = D>(
-    props: PolymorphicBoxProps<E, P>
+    props: { is?: E } & Omit<Omit<BoxProps<E>, keyof P> & P, 'is'>
   ): JSX.Element
 }

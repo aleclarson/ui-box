@@ -20,7 +20,9 @@ export default function enhanceProps(
   const propsMap = expandAliases(rawProps)
 
   const style = { ...rawProps.style }
-  const preservedProps: PreservedProps = { style }
+  propsMap.set('style', style)
+
+  const preservedProps: PreservedProps = {}
   let className = rawProps.className || ''
 
   for (const [propName, propValue] of propsMap) {

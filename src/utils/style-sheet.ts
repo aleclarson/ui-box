@@ -26,7 +26,6 @@ function sheetForTag(tag: HTMLStyleElement): CSSStyleSheet | undefined {
 
 function makeStyleTag() {
   const tag = document.createElement('style')
-  tag.type = 'text/css'
   tag.setAttribute('data-ui-box', '')
   tag.append(document.createTextNode(''))
   ;(document.head || document.querySelector('head')).append(tag)

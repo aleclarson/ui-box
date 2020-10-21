@@ -27,8 +27,8 @@ function sheetForTag(tag: HTMLStyleElement): CSSStyleSheet | undefined {
 function makeStyleTag() {
   const tag = document.createElement('style')
   tag.setAttribute('data-ui-box', '')
-  tag.append(document.createTextNode(''))
-  ;(document.head || document.querySelector('head')).append(tag)
+  tag.appendChild(document.createTextNode(''))
+  document.head.appendChild(tag)
   return tag
 }
 
@@ -113,7 +113,7 @@ export default class CustomStyleSheet {
       if (this.isSpeedy && sheet && sheet.insertRule) {
         this._insert(sheet, rule)
       } else {
-        last(this.tags).append(document.createTextNode(rule))
+        last(this.tags).appendChild(document.createTextNode(rule))
       }
     } else if (this.sheet) {
       // Server side is pretty simple

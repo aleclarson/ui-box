@@ -1,7 +1,7 @@
 {
-  "name": "ui-box",
+  "name": "@alloc/ui-box",
   "version": "4.1.0",
-  "description": "Blazing Fast React UI Primitive",
+  "description": "Fork of ui-box with Vite support",
   "contributors": [
     "Jeroen Ransijn (https://twitter.com/jeroen_ransijn)",
     "Roland Warmerdam (https://roland.codes)",

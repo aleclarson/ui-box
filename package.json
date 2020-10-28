@@ -13,7 +13,7 @@
   "keywords": [
     "react"
   ],
-  "repository": "segmentio/ui-box",
+  "repository": "alloc/ui-box",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

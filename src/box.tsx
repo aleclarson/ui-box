@@ -1,9 +1,9 @@
-import React, { forwardRef } from 'react'
+import * as React from 'react'
 import { BoxComponent, BoxProps } from './types/box-types'
 import enhanceProps from './enhance-props'
 import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
-const Box = forwardRef(
+const Box = React.forwardRef(
   <E extends React.ElementType>(
     { is, children, allowUnsafeHref, ...props }: BoxProps<E>,
     ref: React.Ref<Element>

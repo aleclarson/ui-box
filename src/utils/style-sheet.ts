@@ -58,9 +58,9 @@ export default class CustomStyleSheet {
   private ctr: number = 0
   private injected: boolean = false
 
-  constructor({ speedy = !isDev, maxLength = 65000 }: Options = {}) {
+  constructor({ speedy, maxLength = 65000 }: Options = {}) {
     // The big drawback here is that the css won't be editable in devtools
-    this.isSpeedy = speedy
+    this.isSpeedy = speedy ?? !isDev
     this.maxLength = maxLength
   }
 

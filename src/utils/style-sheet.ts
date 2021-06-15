@@ -53,15 +53,18 @@ interface Options {
 export default class CustomStyleSheet {
   private isSpeedy: boolean
   private sheet?: Writeable<CSSStyleSheet> | ServerSideStyleSheet | null
-  private tags: HTMLStyleElement[] = []
+  private tags: HTMLStyleElement[] = isBrowser
+    ? Array.from<any>(document.querySelectorAll('style[data-ui-box]'))
+    : []
   private maxLength: number
   private ctr: number = 0
-  private injected: boolean = false
+  private injected: boolean
 
   constructor({ speedy, maxLength = 65000 }: Options = {}) {
     // The big drawback here is that the css won't be editable in devtools
     this.isSpeedy = speedy ?? !isDev
     this.maxLength = maxLength
+    this.injected = this.tags.length > 0
   }
 
   getSheet() {
@@ -70,7 +73,7 @@ export default class CustomStyleSheet {
 
   inject() {
     if (this.injected) {
-      throw new Error('StyleSheet has already been injected.')
+      return
     }
 
     if (isBrowser) {

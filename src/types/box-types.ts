@@ -34,4 +34,6 @@ export interface BoxComponent<P = {}, D extends React.ElementType = 'div'> {
   <E extends React.ElementType = D>(
     props: { is?: E } & Omit<Omit<BoxProps<E>, keyof P> & P, 'is'>
   ): JSX.Element
+
+  displayName?: string
 }

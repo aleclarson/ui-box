@@ -5,7 +5,7 @@ import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
 const Box = React.forwardRef(
   <E extends React.ElementType>(
-    { is, children, allowUnsafeHref, ...props }: BoxProps<E>,
+    { is = 'div', children, allowUnsafeHref, ...props }: BoxProps<E>,
     ref: React.Ref<Element>
   ) => {
     // Convert the CSS props to class names (and inject the styles)
@@ -43,10 +43,5 @@ const Box = React.forwardRef(
 
 // @ts-ignore
 Box.displayName = 'Box'
-
-// @ts-ignore
-Box.defaultProps = {
-  is: 'div',
-}
 
 export default Box

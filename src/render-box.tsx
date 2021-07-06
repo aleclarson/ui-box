@@ -4,7 +4,8 @@ import { BoxProps } from './types/box-types'
 import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
 export default function renderBox<E extends React.ElementType>(
-  { is, children, allowUnsafeHref, ...props }: BoxProps<E>,
+  Box: E,
+  { children, allowUnsafeHref, ...props }: Omit<BoxProps<E>, 'is'>,
   ref?: React.Ref<Element>
 ) {
   // Convert the CSS props to class names (and inject the styles)
@@ -25,7 +26,7 @@ export default function renderBox<E extends React.ElementType>(
     (typeof allowUnsafeHref === 'boolean'
       ? !allowUnsafeHref
       : getUseSafeHref()) &&
-    is === 'a' &&
+    Box === 'a' &&
     parsedProps.href
 
   if (safeHrefEnabled) {
@@ -37,5 +38,5 @@ export default function renderBox<E extends React.ElementType>(
     parsedProps.rel = safeRel
   }
 
-  return React.createElement(is || 'div', parsedProps, children)
+  return React.createElement(Box, parsedProps, children)
 }

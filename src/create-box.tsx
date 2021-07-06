@@ -5,13 +5,18 @@ import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
 export const createBox = <T extends React.ElementType = 'div'>(
   displayName: string,
-  defaultElement: T = 'div' as T
+  defaultElement: T = 'div' as T,
+  useProps: <E extends React.ElementType>(
+    props: Omit<BoxProps<E>, 'is' | 'allowUnsafeHref' | 'children'>
+  ) => typeof props = props => props
 ) => {
   const Box = React.forwardRef(
     <E extends React.ElementType>(
       { is = defaultElement, children, allowUnsafeHref, ...props }: BoxProps<E>,
       ref: React.Ref<Element>
     ) => {
+      props = useProps(props)
+
       // Convert the CSS props to class names (and inject the styles)
       const { className, enhancedProps: parsedProps } = enhanceProps(props)
 

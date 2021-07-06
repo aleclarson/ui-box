@@ -1,6 +1,6 @@
 {
   "name": "@alloc/ui-box",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "description": "Fork of ui-box with Vite support",
   "contributors": [
     "Alec Larson (https://github.com/aleclarson)",
